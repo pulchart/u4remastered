@@ -375,6 +375,7 @@ clean_patchedgame: \
 		clean_use \
 		clean_shrine \
 		clean_camp \
+		clean_end_game \
 		clean_subs \
 		clean_dungeon \
 		clean_peer
@@ -507,6 +508,14 @@ files/patched/285.prg: src/patchedgame/camp.prg | files/patched
 
 clean_camp:
 	rm -f files/patched/285.prg
+
+# End game.
+
+files/patched/49a.prg: src/patchedgame/end_game.prg | files/patched
+	cp $< $@
+
+clean_end_game:
+	rm -f files/patched/49a.prg
 
 # Implicit rule.
 
@@ -1023,6 +1032,12 @@ clean_cartridge:
 	rm -f src/easyflash/efssg.bin
 	rm -f src/easyflash/padded.bin
 	rm -f u4remastered.crt
+
+
+clean_tempfiles:
+	find . -name '*.bak' -delete
+	find . -name '*.orig' -delete
+	find . -name '*.\~*' -delete
 
 
 .PHONY: clean

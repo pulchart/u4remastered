@@ -264,7 +264,8 @@ shrine:
 	jsr j_console_out
 	dec $70
 	bne @print
-	bit $c010
+	;bit $c010      ; harmless MISTAKE, copied verbatim from Apple II.
+	jsr j_clearkbd  ; BUGFIX for mistake
 	lda #$00
 	sta key_buf_len
 	jsr j_primm
@@ -598,9 +599,9 @@ virtues_and_mantras:
 
 print_hint:
 	tay
-	lda #$fa
+	lda #<string_table
 	sta ptr1
-	lda #$8c
+	lda #>string_table
 	sta ptr1+1
 	ldx #$00
 @checknext:
@@ -632,6 +633,7 @@ print_hint:
 	inc ptr1+1
 :	rts
 
+string_table:
 hint_honesty_0:
 	.byte 0, "Take not the", $8d
 	.byte "gold of others", $8d

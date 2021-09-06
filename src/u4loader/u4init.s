@@ -14,6 +14,12 @@
 	.import __TRAINERBALLOON_LOAD__
 	.import __TRAINERBALLOON_RUN__
 	.import __TRAINERBALLOON_SIZE__
+	.import __BALLOONDESCEND_LOAD__
+	.import __BALLOONDESCEND_RUN__
+	.import __BALLOONDESCEND_SIZE__
+	.import __LOOTDROP_LOAD__
+	.import __LOOTDROP_RUN__
+	.import __LOOTDROP_SIZE__
 	.import __DRAWVIEW_LOAD__
 	.import __DRAWVIEW_RUN__
 	.import __DRAWVIEW_SIZE__
@@ -297,6 +303,14 @@ relocation_tab:
 	.addr __TRAINERBALLOON_LOAD__
 	.addr __TRAINERBALLOON_RUN__
 	.addr __TRAINERBALLOON_SIZE__
+
+	.addr __BALLOONDESCEND_LOAD__
+	.addr __BALLOONDESCEND_RUN__
+	.addr __BALLOONDESCEND_SIZE__
+
+	.addr __LOOTDROP_LOAD__
+	.addr __LOOTDROP_RUN__
+	.addr __LOOTDROP_SIZE__
 
 	.addr __DRAWVIEW_LOAD__
 	.addr __DRAWVIEW_RUN__
